@@ -1,0 +1,852 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            750: '#0369a1',
+                            900: '#0c4a6e'
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+      .animated-role { background:linear-gradient(90deg,#00d4ff,#a855f7,#ec4899,#00d4ff); background-size:300% 300%; background-clip:text; -webkit-background-clip:text; color:transparent; -webkit-text-fill-color:transparent; animation:gradientShift 4s ease infinite; filter:drop-shadow(0 0 8px #38bdf855); }
+      .typing-cursor {display:inline-block;width:3px;height:1em;background:#38bdf8;vertical-align:-.12em;margin-left:3px;animation:cursorBlink .7s step-end infinite;}
+      @keyframes gradientShift {0%,100%{background-position:0% 50%}50%{background-position:100% 50%}}
+      @keyframes cursorBlink {50%{opacity:0}}
+      @media(prefers-reduced-motion:reduce){.animated-role,.typing-cursor{animation:none}}
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 dark:bg-slate-900 dark:text-slate-100 transition-colors duration-300">
+
+    <!-- Header & Navigation -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/80 dark:bg-slate-900/80 backdrop-blur-md border-b border-slate-200 dark:border-slate-800">
+        <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
+            <a href="#" class="text-xl font-bold bg-gradient-to-r from-sky-500 to-indigo-500 bg-clip-text text-transparent">
+                Home<span class="text-sky-500"></span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center space-x-8 font-medium">
+                <a href="#about" class="hover:text-sky-500 transition-colors">About</a>
+                <a href="#education" class="hover:text-sky-500 transition-colors">Education</a>
+                <a href="#skills" class="hover:text-sky-500 transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-sky-500 transition-colors">Projects</a>
+                <a href="#experience and activity" class="hover:text-sky-500 transition-colors">Experience And Activity</a>		
+                <a href="#contact" class="hover:text-sky-500 transition-colors">Contact</a>
+            </nav>
+
+            <div class="flex items-center space-x-4">
+                <!-- Theme Toggle Button -->
+                <button id="theme-toggle" class="p-2 rounded-lg bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-300 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors">
+                    <i id="theme-icon" class="fa-solid fa-moon text-lg"></i>
+                </button>
+
+                <!-- Mobile Menu Button -->
+                <button id="menu-btn" class="md:hidden p-2 text-slate-600 dark:text-slate-300 focus:outline-none">
+                    <i class="fa-solid fa-bars text-xl"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pt-2 pb-4 bg-white dark:bg-slate-900 border-b border-slate-200 dark:border-slate-800">
+            <a href="#about" class="block py-2 hover:text-sky-500">About</a>
+            <a href="#education" class="block py-2 hover:text-sky-500">Education</a>
+            <a href="#skills" class="block py-2 hover:text-sky-500">Skills</a>
+            <a href="#projects" class="block py-2 hover:text-sky-500">Projects</a>
+            <a href="#experience and activity" class="block py-2 hover:text-sky-500">Experience And Activity</a>	
+            <a href="#contact" class="block py-2 hover:text-sky-500">Contact</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="pt-32 pb-20 md:pt-44 md:pb-32 px-6">
+      <div class="max-w-6xl mx-auto flex flex-col-reverse md:flex-row items-center justify-between gap-12">
+        <div class="flex-1 text-center md:text-left min-w-0">
+          <span class="inline-block py-1 px-3 rounded-full bg-sky-100 dark:bg-sky-900/40 text-sky-600 dark:text-sky-400 font-semibold text-sm mb-4">Welcome to my portfolio</span>
+          <h1 class="text-4xl md:text-5xl font-extrabold mb-5 leading-tight">Hello, I'm <span class="text-sky-500">Dulan Dhanujaya</span> </h1>
+          <h2 class="text-2xl md:text-3xl font-bold mb-5 min-h-[4.5rem] md:min-h-[2.5rem]">I'm a <span class="inline-block"><span id="typing-text" class="animated-role">AI Engineer</span><span class="typing-cursor" aria-hidden="true"></span></span></h2>
+                <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-8 max-w-xl mx-auto md:mx-0">
+				I am an aspiring AI Engineer and technology enthusiast passionate about Artificial Intelligence, Machine Learning, Web Development, and Cybersecurity. I enjoy learning new technologies, solving problems, and building innovative digital solutions. 
+                </p>
+                <div class="flex flex-wrap justify-center md:justify-start gap-4">
+                    <a href="#projects" class="px-6 py-3 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-medium shadow-lg shadow-sky-500/25 transition-all">
+                        View Projects
+                    </a>
+                    <a href="#contact" class="px-6 py-3 rounded-xl border border-slate-300 dark:border-slate-700 hover:border-sky-500 dark:hover:border-sky-500 font-medium transition-all">
+                        Contact Me
+                    </a>
+                </div>
+            </div>
+            <div class="w-48 h-48 md:w-80 md:h-80 relative flex items-center justify-center">
+                <div class="absolute inset-0 bg-gradient-to-tr from-sky-500 to-indigo-500 rounded-full blur-2xl opacity-30 animate-pulse"></div>
+                <!-- Profile Image Added Here -->
+                <img src="mypic.jpeg" alt="Profile" class="relative w-40 h-40 md:w-72 md:h-72 object-cover rounded-full shadow-xl border-4 border-white dark:border-slate-800">
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="py-20 bg-slate-100/50 dark:bg-slate-800/50 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-3">About Me</h2>
+                <div class="w-16 h-1 bg-sky-500 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12 items-center">
+                <div class="space-y-4 text-slate-600 dark:text-slate-300">
+                    <p class="text-lg leading-relaxed">
+                        I am a dedicated professional with over 2 years of experience building modern web applications. My background spans both front-end architecture and back-end logic, ensuring seamless end-to-end solutions.
+                    </p>
+                    <p class="leading-relaxed">
+                        I love turning complex problems into simple, beautiful, and intuitive designs. When I'm not coding, you'll find me exploring new technologies, reading tech articles, or hiking outdoors.
+                    </p>
+                    <div class="pt-4 grid grid-cols-2 gap-4">
+                        <div>
+                            <span class="block text-2xl font-bold text-sky-500">10+</span>
+                            <span class="text-sm text-slate-500">Certificates</span>
+                        </div>
+                        <div>
+                            <span class="block text-2xl font-bold text-sky-500">4+</span>
+                            <span class="text-sm text-slate-500">Completed Projects</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
+                        <i class="fa-solid fa-code text-3xl text-sky-500 mb-4"></i>
+                        <h3 class="font-semibold text-lg mb-2">Development</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Robust apps built with modern frameworks.</p>
+                    </div>
+                    <div class="p-6 bg-white dark:bg-slate-800 rounded-2xl shadow-sm border border-slate-200 dark:border-slate-700">
+                        <i class="fa-solid fa-paintbrush text-3xl text-indigo-500 mb-4"></i>
+                        <h3 class="font-semibold text-lg mb-2">UI/UX Design</h3>
+                        <p class="text-sm text-slate-500 dark:text-slate-400">Intuitive layouts designed for users.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Education Section -->
+    <section id="education" class="py-20 px-6 bg-slate-100/50 dark:bg-slate-800/50">
+        <div class="max-w-5xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl font-bold mb-3">Education</h2>
+                <div class="w-16 h-1 bg-sky-500 mx-auto rounded-full"></div>
+            </div>
+
+            <!-- This introduction uses the same typing / gradient effect as Home -->
+            <div class="education-intro text-center max-w-4xl mx-auto">
+                <h3 class="text-2xl md:text-3xl font-bold mb-6 min-h-[3rem]">
+                    <span id="education-title" class="animated-role"></span><span class="typing-cursor" aria-hidden="true"></span>
+                </h3>
+                <p id="education-description" class="text-lg leading-relaxed text-slate-600 dark:text-slate-300 min-h-[10rem]"></p>
+                <p id="education-goal" class="text-lg leading-relaxed text-slate-600 dark:text-slate-300 mt-4 min-h-[5rem]"></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-3">programming</h2>
+                <div class="w-16 h-1 bg-sky-500 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <!-- Skill Card -->
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center hover:border-sky-500 transition-all shadow-sm">
+                    <i class="fa-brands fa-html5 text-4xl text-orange-500 mb-3"></i>
+                    <h3 class="font-semibold mb-1">HTML / CSS</h3>
+                    <p class="text-xs text-slate-500">Advanced</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center hover:border-sky-500 transition-all shadow-sm">
+                    <i class="fa-brands fa-java text-4xl text-yellow-400 mb-3"></i>
+                    <h3 class="font-semibold mb-1">Java</h3>
+                    <p class="text-xs text-slate-500">Advanced</p>
+                </div>
+               
+				<div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center hover:border-sky-500 transition-all shadow-sm">
+                    <i class="fa-brands fa-C text-4xl text-sky-400 mb-3"></i>
+                    <h3 class="font-semibold mb-1">C</h3>
+                    <p class="text-xs text-slate-500">Intermediate</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center hover:border-sky-500 transition-all shadow-sm">
+                    <i class="fa-brands fa-advanced computer programme- text-4xl text-green-500 mb-3"></i>
+                    <h3 class="font-semibold mb-1">C#</h3>
+                    <p class="text-xs text-slate-500">Advanced</p>
+                </div>
+				<div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center hover:border-sky-500 transition-all shadow-sm">
+                    <i class="fa-brands fa-python text-4xl text-green-500 mb-3"></i>
+                    <h3 class="font-semibold mb-1">Python</h3>
+                    <p class="text-xs text-slate-500">Advanced</p>
+                </div>
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center hover:border-sky-500 transition-all shadow-sm">
+                    <i class="fa-solid fa-database text-4xl text-indigo-500 mb-3"></i>
+                    <h3 class="font-semibold mb-1">Databases</h3>
+                    <p class="text-xs text-slate-500"> SQL</p>
+                </div>
+				 <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center hover:border-sky-500 transition-all shadow-sm">
+                    <i class="fa-brands fa-linkedin text-4xl text-sky-400 mb-3"></i>
+                    <h3 class="font-semibold mb-1">Linkedin</h3>
+					<a href="https://www.linkedin.com/in/dulan-dhanujaya-980871376/" target="_blank" class="text-sky-500 hover:underline font-medium">Follow </a>
+                   
+                </div>
+                <div class="p-6 rounded-2xl bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 text-center hover:border-sky-500 transition-all shadow-sm">
+                    <i class="fa-brands fa-git-alt text-4xl text-red-500 mb-3"></i>
+                    <h3 class="font-semibold mb-1">Git & GitHub</h3>
+                    
+					 <a href="https://github.com/settings/profile" target="_blank" class="text-sky-500 hover:underline font-medium">Follow </a>
+	
+                </div>
+              
+            </div>
+        </div>
+    </section>
+	<!-- Skills Section -->
+    <section id="certificates" class="py-20 px-6">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-3">Certificates</h2>
+		
+				
+                <div class="w-16 h-1 bg-sky-500 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6">
+               <!-- Certificate Details -->
+                    <div class="p-6 flex-1 flex flex-col justify-between">
+                        
+<div>
+    <!-- Certificate Image -->
+    
+    <!-- Certificate Details -->
+    <div class="flex items-center justify-between mb-2">
+        <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-sky-100 dark:bg-sky-900/40 text-sky-600 dark:text-sky-400">
+            Front-End Web Development
+        </span>
+
+        <span class="text-xs text-slate-400 font-mono">
+            Code: W9cjEKaVqT
+        </span>
+    </div>
+
+    <h3 class="font-bold text-xl mb-1">
+        University of Moratuwa
+    </h3>
+
+    <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">
+        Centre for Open & Distance Learning (CODL) | Dept. of IT
+    </p>
+
+    <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">
+        Successfully completed the online learning programme in Front-End Web Development.
+    </p>
+
+    <!-- Verification -->
+    <div class="pt-2 border-t border-slate-100 dark:border-slate-700/50 flex items-center justify-between text-xs">
+
+        <span class="text-slate-500">
+            <i class="fa-solid fa-circle-check text-green-500 mr-1"></i>
+            Verified E-Certificate
+        </span>
+
+        <a href="https://open.uom.lk/verify"
+           target="_blank"
+           rel="noopener noreferrer"
+           class="text-sky-500 hover:underline font-medium">
+            Verify Online &rarr;
+			
+<a href="web1.jpeg"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="text-sky-500 hover:underline font-medium">
+
+    View Certificate &rarr;
+
+</a>
+
+			<div class="mb-4 overflow-hidden rounded-xl">
+        </a>
+		
+    </div>
+
+    </div>
+</div>
+
+                    </div>
+					<div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-sky-100 dark:bg-sky-900/40 text-sky-600 dark:text-sky-400">
+                                   Python programming
+                                </span>
+                                <span class="text-xs text-slate-400 font-mono">Code: 0xhKZ3yING</span>
+                            </div>
+                            <h3 class="font-bold text-xl mb-1">University of Moratuwa</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">Centre for Open & Distance Learning (CODL) | Dept. of IT</p>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">
+                                  
+                             Successfully completed the online learning programme in Python programming.
+                            </p>
+                        </div>
+                        <div class="pt-2 border-t border-slate-100 dark:border-slate-700/50 flex items-center justify-between text-xs">
+                            <span class="text-slate-500"><i class="fa-solid fa-circle-check text-green-500 mr-1"></i> Verified E-Certificate</span>
+                            <a href="https://open.uom.lk/verify" target="_blank" class="text-sky-500 hover:underline font-medium">Verify Online &rarr;</a>
+							<a href="python.jpeg"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="text-sky-500 hover:underline font-medium">
+
+    View Certificate &rarr;
+
+</a>
+
+	
+       
+                        </div>
+                    </div>
+					<div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-sky-100 dark:bg-sky-900/40 text-sky-600 dark:text-sky-400">
+                                   Python Begineers
+                                </span>
+                                <span class="text-xs text-slate-400 font-mono">Code: A2YqGxI7D2</span>
+                            </div>
+                            <h3 class="font-bold text-xl mb-1">University of Moratuwa</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">Centre for Open & Distance Learning (CODL) | Dept. of IT</p>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">
+                                  
+                             Successfully completed the online learning programme in Python for Begineers.
+                            </p>
+                        </div>
+                        <div class="pt-2 border-t border-slate-100 dark:border-slate-700/50 flex items-center justify-between text-xs">
+                            <span class="text-slate-500"><i class="fa-solid fa-circle-check text-green-500 mr-1"></i> Verified E-Certificate</span>
+                            <a href="https://open.uom.lk/verify" target="_blank" class="text-sky-500 hover:underline font-medium">Verify Online &rarr;</a>
+							<a href="beginner.jpeg"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="text-sky-500 hover:underline font-medium">
+
+    View Certificate &rarr;
+
+</a>
+
+	
+       
+                        </div>
+                    </div>
+					<div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-sky-100 dark:bg-sky-900/40 text-sky-600 dark:text-sky-400">
+                                   Introduction To Software Quality Assurance
+                                </span>
+                                <span class="text-xs text-slate-400 font-mono">Code: dAmyB6jw0l</span>
+                            </div>
+                            <h3 class="font-bold text-xl mb-1">University of Moratuwa</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">Centre for Open & Distance Learning (CODL) | Dept. of IT</p>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">
+                                  
+                             Successfully completed the online learning programme in Introduction To Software Quality Assurance.
+                            </p>
+                        </div>
+                        <div class="pt-2 border-t border-slate-100 dark:border-slate-700/50 flex items-center justify-between text-xs">
+                            <span class="text-slate-500"><i class="fa-solid fa-circle-check text-green-500 mr-1"></i> Verified E-Certificate</span>
+                            <a href="https://open.uom.lk/verify" target="_blank" class="text-sky-500 hover:underline font-medium">Verify Online &rarr;</a>
+							<a href="mora.jpg"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="text-sky-500 hover:underline font-medium">
+
+    View Certificate &rarr;
+
+</a>
+							
+	
+       
+                        </div>
+                    </div>
+					
+					<div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-sky-100 dark:bg-sky-900/40 text-sky-600 dark:text-sky-400">
+                                 Agile Project Management in ICT Projects
+                                </span>
+                                <span class="text-xs text-slate-400 font-mono">Code: eBZVBpZnBN</span>
+                            </div>
+                            <h3 class="font-bold text-xl mb-1">University of Moratuwa</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">Centre for Open & Distance Learning (CODL) | Dept. of IT</p>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">
+                                  
+                             Successfully completed the online learning programme in Agile Project Management in ICT Projects.
+                            </p>
+                        </div>
+                        <div class="pt-2 border-t border-slate-100 dark:border-slate-700/50 flex items-center justify-between text-xs">
+                            <span class="text-slate-500"><i class="fa-solid fa-circle-check text-green-500 mr-1"></i> Verified E-Certificate</span>
+                            <a href="https://open.uom.lk/verify" target="_blank" class="text-sky-500 hover:underline font-medium">Verify Online &rarr;</a>
+							<a href="agile.jpeg"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="text-sky-500 hover:underline font-medium">
+
+    View Certificate &rarr;
+
+</a>
+	
+       
+                        </div>
+                    </div>
+					
+					<div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-sky-100 dark:bg-sky-900/40 text-sky-600 dark:text-sky-400">
+                               AI/ML Engineer 1
+                                </span>
+                                <span class="text-xs text-slate-400 font-mono">Code: rtyrsx1qub</span>
+                            </div>
+                            <h3 class="font-bold text-xl mb-1">SLIIT UNI</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">Conducted by the Centre for Open and Distance Education.Faculty of Computing.SLIIT</p>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">
+                                  
+                             Successfully completed the online learning programme in AI/ML Engineer - Stage 1.
+                            </p>
+                        </div>
+                        <div class="pt-2 border-t border-slate-100 dark:border-slate-700/50 flex items-center justify-between text-xs">
+                            <span class="text-slate-500"><i class="fa-solid fa-circle-check text-green-500 mr-1"></i> Verified E-Certificate</span>
+                            <a href="https://code.sliit.org/enrollments" target="_blank" class="text-sky-500 hover:underline font-medium">Verify Online &rarr;</a>
+		<a href="ai1.jpeg"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="text-sky-500 hover:underline font-medium">
+
+    View Certificate &rarr;
+
+</a>		
+       
+                        </div>
+                    </div>
+					
+					<div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-sky-100 dark:bg-sky-900/40 text-sky-600 dark:text-sky-400">
+                               AI/ML Engineer 2
+                                </span>
+                                <span class="text-xs text-slate-400 font-mono">Code: mcbugolimt</span>
+                            </div>
+                            <h3 class="font-bold text-xl mb-1">SLIIT UNI</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">Conducted by the Centre for Open and Distance Education.Faculty of Computing.SLIIT</p>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">
+                                  
+                             Successfully completed the online learning programme in AI/ML Engineer - Stage 2.
+                            </p>
+                        </div>
+                        <div class="pt-2 border-t border-slate-100 dark:border-slate-700/50 flex items-center justify-between text-xs">
+                            <span class="text-slate-500"><i class="fa-solid fa-circle-check text-green-500 mr-1"></i> Verified E-Certificate</span>
+                            <a href="https://code.sliit.org/enrollments" target="_blank" class="text-sky-500 hover:underline font-medium">Verify Online &rarr;</a>
+	<a href="ai2.jpeg"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="text-sky-500 hover:underline font-medium">
+
+    View Certificate &rarr;
+
+</a>		
+       
+                        </div>
+                    </div>
+					
+					<div class="p-6 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center justify-between mb-2">
+                                <span class="text-xs font-semibold px-2.5 py-1 rounded-md bg-sky-100 dark:bg-sky-900/40 text-sky-600 dark:text-sky-400">
+                               AI/ML Engineer 3
+                                </span>
+                                <span class="text-xs text-slate-400 font-mono">Code: uijusfut1q</span>
+                            </div>
+                            <h3 class="font-bold text-xl mb-1">SLIIT UNI</h3>
+                            <p class="text-xs text-slate-500 dark:text-slate-400 mb-3">Conducted by the Centre for Open and Distance Education.Faculty of Computing.SLIIT</p>
+                            <p class="text-sm text-slate-600 dark:text-slate-300 mb-4">
+                                  
+                             Successfully completed the online learning programme in AI/ML Engineer - Stage 3.
+                            </p>
+                        </div>
+                        <div class="pt-2 border-t border-slate-100 dark:border-slate-700/50 flex items-center justify-between text-xs">
+                            <span class="text-slate-500"><i class="fa-solid fa-circle-check text-green-500 mr-1"></i> Verified E-Certificate</span>
+                            <a href="https://code.sliit.org/enrollments" target="_blank" class="text-sky-500 hover:underline font-medium">Verify Online &rarr;</a>
+	<a href="ai3.jpg"
+   target="_blank"
+   rel="noopener noreferrer"
+   class="text-sky-500 hover:underline font-medium">
+
+    View Certificate &rarr;
+
+</a>		
+       
+                        </div>
+                    </div>
+					
+					
+</section>
+   
+<!-- Projects Section -->
+<section id="projects" class="py-20 bg-slate-100/50 dark:bg-slate-800/50 px-6">
+    <div class="max-w-6xl mx-auto">
+
+        <div class="text-center mb-16">
+            <h2 class="text-3xl font-bold mb-3">Featured Projects</h2>
+            <div class="w-16 h-1 bg-sky-500 mx-auto rounded-full"></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8">
+
+            <!-- Project 1 -->
+            <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-1000 shadow-sm flex flex-col">
+
+                <!-- Blender Image -->
+                <img
+                    src="blender.jpg"
+                    alt="Blender 3D Animation Project"
+                    class="h-48 w-full object-contain bg-white p-4"
+                >
+
+                <div class="p-6 flex-1 flex flex-col justify-between">
+
+                    <div>
+                        <h3 class="font-bold text-xl mb-2">
+                            3D Animation
+                        </h3>
+
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">
+                            Excited to share my first 3D modeling project,
+                            a simple coffee cup created using Blender.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-700">
+                                Blender
+                            </span>
+                        </div>
+
+                        <div class="flex space-x-4 text-sm font-medium">
+
+                            <a href="https://lnkd.in/p/g_j69si7"
+                               class="text-sky-500 hover:underline">
+                                <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i>
+                                Live Demo
+                            </a>
+
+                            <a href="https://github.com/settings/profile"
+                               class="text-slate-600 dark:text-slate-400 hover:underline">
+                                <i class="fa-brands fa-github mr-1"></i>
+                                Code
+                            </a>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+			
+			
+			
+			<!-- Project 2 -->
+            <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-1000 dark:border-slate-1000 shadow-sm flex flex-col">
+
+                <!--  Image -->
+                <img
+                    src="Capture2.jpg"
+                    alt="Password Project"
+                    class="h-48 w-full object-contain bg-black p-4"
+                >
+
+                <div class="p-6 flex-1 flex flex-col justify-between">
+
+                    <div>
+                        <h3 class="font-bold text-xl mb-2">
+                            Password Strength Analyzer
+                        </h3>
+
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">
+                            Excited to share my Password Strength Analyzer  project,
+                            a simple Password checker created using Html,Css,js.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-700">
+                               Html,Css,Js.
+                            </span>
+                        </div>
+
+                        <div class="flex space-x-4 text-sm font-medium">
+
+                            <a href="file:///D:/my%20portfolio/Project1.html "
+                               class="text-sky-500 hover:underline">
+                                <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i>
+                                Live Demo
+                            </a>
+
+                            <a href="https://github.com/settings/profile"
+                               class="text-slate-600 dark:text-slate-400 hover:underline">
+                                <i class="fa-brands fa-github mr-1"></i>
+                                Code
+                            </a>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+			
+			
+			
+			<!-- Project 3 -->
+            <div class="bg-white dark:bg-slate-800 rounded-2xl overflow-hidden border border-slate-200 dark:border-slate-1000 shadow-sm flex flex-col">
+
+                <!-- Blender Image -->
+                <img
+                    src="blender.jpg"
+                    alt="Blender 3D Animation Project"
+                    class="h-48 w-full object-contain bg-white p-4"
+                >
+
+                <div class="p-6 flex-1 flex flex-col justify-between">
+
+                    <div>
+                        <h3 class="font-bold text-xl mb-2">
+                            3D Animation
+                        </h3>
+
+                        <p class="text-sm text-slate-500 dark:text-slate-400 mb-4">
+                            Excited to share my first 3D modeling project,
+                            a simple coffee cup created using Blender.
+                        </p>
+                    </div>
+
+                    <div>
+                        <div class="flex flex-wrap gap-2 mb-4">
+                            <span class="px-2.5 py-1 text-xs rounded-md bg-slate-100 dark:bg-slate-700">
+                                Blender
+                            </span>
+                        </div>
+
+                        <div class="flex space-x-4 text-sm font-medium">
+
+                            <a href="https://lnkd.in/p/g_j69si7"
+                               class="text-sky-500 hover:underline">
+                                <i class="fa-solid fa-arrow-up-right-from-square mr-1"></i>
+                                Live Demo
+                            </a>
+
+                            <a href="https://github.com/settings/profile"
+                               class="text-slate-600 dark:text-slate-400 hover:underline">
+                                <i class="fa-brands fa-github mr-1"></i>
+                                Code
+                            </a>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+	
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 px-6">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl font-bold mb-3">Get In Touch</h2>
+                <div class="w-16 h-1 bg-sky-500 mx-auto rounded-full"></div>
+            </div>
+            <div class="grid md:grid-cols-2 gap-12">
+                <div class="space-y-6">
+                    <h3 class="text-xl font-semibold">Let's talk about everything!</h3>
+                    <p class="text-slate-600 dark:text-slate-400">
+                        Don't hesitate to reach out if you have a project in mind, want to collaborate, or just want to say hi.
+                    </p>
+                    <div class="space-y-4">
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-sky-100 dark:bg-sky-900/40 text-sky-500 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <span class="text-sm text-slate-500">Email</span>
+                                <p class="font-medium">dananjayadulan23@gmail.com</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center space-x-4">
+                            <div class="w-12 h-12 rounded-xl bg-sky-100 dark:bg-sky-900/40 text-sky-500 flex items-center justify-center text-lg">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <span class="text-sm text-slate-500">Location</span>
+                                <p class="font-medium">Veyangoda,Sri Lanka</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <form class="space-y-4" onsubmit="event.preventDefault(); alert('Message sent successfully!');">
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Your Name</label>
+                        <input type="text" required class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent focus:outline-none focus:border-sky-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Your Email</label>
+                        <input type="email" required class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent focus:outline-none focus:border-sky-500">
+                    </div>
+                    <div>
+                        <label class="block text-sm font-medium mb-1">Message</label>
+                        <textarea rows="4" required class="w-full px-4 py-3 rounded-xl border border-slate-300 dark:border-slate-700 bg-transparent focus:outline-none focus:border-sky-500"></textarea>
+                    </div>
+                    <button type="submit" class="w-full py-3 rounded-xl bg-sky-500 hover:bg-sky-600 text-white font-medium shadow-lg shadow-sky-500/25 transition-all">
+                        Send Message
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-8 border-t border-slate-200 dark:border-slate-800 text-center text-sm text-slate-500 px-6">
+        <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+            <p>&copy; 2026 Dulan Dhanujaya. All rights reserved.</p>
+            <div class="flex space-x-6 text-lg">
+                <a href="https://github.com/settings/profile" class="hover:text-sky-500"><i class="fa-brands fa-github"></i></a>
+                <a href="https://www.linkedin.com/in/dulan-dhanujaya-980871376/" class="hover:text-sky-500"><i class="fa-brands fa-linkedin"></i></a>
+                <a href="#" class="hover:text-sky-500"><i class="fa-brands fa-twitter"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript for Mobile Menu & Dark Mode -->
+    <script>
+        // Mobile Menu Toggle
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Dark Mode Toggle
+        const themeToggle = document.getElementById('theme-toggle');
+        const themeIcon = document.getElementById('theme-icon');
+        const html = document.documentElement;
+
+        // Check user's preferred theme or local storage
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            html.classList.add('dark');
+            themeIcon.classList.replace('fa-moon', 'fa-sun');
+        }
+
+        themeToggle.addEventListener('click', () => {
+            html.classList.toggle('dark');
+            if (html.classList.contains('dark')) {
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+            } else {
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+            }
+        });
+    </script>
+    <script>
+      (() => {
+        const el = document.getElementById('typing-text');
+        if (!el) return;
+        const words = ["AI Engineer","Front-End-Developer","Back-End-Developer","Networking Engineer","Cyber Security","Q & A Engineer"];
+        if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {el.textContent=words[0];return;}
+        let wordIndex=0, charIndex=0, deleting=false;
+        function typeAnimation(){
+          const word=words[wordIndex];
+          el.textContent=word.slice(0,charIndex);
+          let delay=deleting?55:105;
+          if (!deleting && charIndex<word.length) charIndex++;
+          else if (!deleting) {deleting=true;delay=1600;}
+          else if (charIndex>0) charIndex--;
+          else {deleting=false;wordIndex=(wordIndex+1)%words.length;delay=450;}
+          setTimeout(typeAnimation,delay);
+        }
+        typeAnimation();
+      })();
+    </script>
+
+    <!-- Education Introduction Typing Animation -->
+    <script>
+      (() => {
+        const educationSection = document.getElementById('education');
+        const titleElement = document.getElementById('education-title');
+        const descriptionElement = document.getElementById('education-description');
+        const goalElement = document.getElementById('education-goal');
+
+        if (!educationSection || !titleElement || !descriptionElement || !goalElement) return;
+
+        const titleText = "Hello, I'm an BICT Undergraduate Student";
+        const descriptionText = "I am an undergraduate student pursuing a Bachelor of Information and Communication Technology Honour's degree at the Faculty of Technology, University of Vavuniya, Sri Lanka. I have a strong interest in technology, especially Artificial Intelligence, Machine Learning, Web Development, and Cybersecurity. Through my academic studies, personal projects, and professional certifications, I continuously work to improve my technical knowledge and practical skills.";
+        const goalText = "My goal is to become a skilled technology professional and contribute innovative solutions through continuous learning, creativity, and development.";
+
+        function typeText(element, text, speed, done) {
+          let index = 0;
+          function writeNextCharacter() {
+            if (index < text.length) {
+              element.textContent += text.charAt(index);
+              index++;
+              setTimeout(writeNextCharacter, speed);
+            } else if (done) {
+              done();
+            }
+          }
+          writeNextCharacter();
+        }
+
+        let animationStarted = false;
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting && !animationStarted) {
+              animationStarted = true;
+              observer.unobserve(educationSection);
+              typeText(titleElement, titleText, 85, () => {
+                typeText(descriptionElement, descriptionText, 18, () => {
+                  typeText(goalElement, goalText, 18);
+                });
+              });
+            }
+          });
+        }, { threshold: 0.25 });
+
+        observer.observe(educationSection);
+      })();
+    </script>
+</body>
+</html>
